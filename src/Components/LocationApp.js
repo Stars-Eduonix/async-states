@@ -1,5 +1,5 @@
 
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 
 
 const LocationApp = () => {
@@ -8,6 +8,10 @@ const LocationApp = () => {
    let [longitude, setLongitude] = useState(0);
    let [hemisphere, setHemisphere] = useState("");
 
+
+   useEffect(()=>{
+    getLocation()
+   }, [])
 
     function getLocation() {
 
@@ -42,9 +46,9 @@ const LocationApp = () => {
             <h2>Longitude: {longitude}</h2>
             <h2>Hemisphere: {hemisphere}</h2>
 
-             <button
+             {/* <button
                 onClick={getLocation}
-             > Get Location </button>
+             > Get Location </button> */}
         </div>
     )
 }
